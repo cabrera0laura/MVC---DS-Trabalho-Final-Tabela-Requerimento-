@@ -14,7 +14,7 @@ namespace LockAiMvc.Controllers
     [Route("[controller]")]
     public class RequerimentoController : Controller
     {
-        public string uriBase = "http://lauraCabrera20.somee.com/LockAi/requerimento/"; //xyz --- enderco da minha API.
+        public string uriBase = "http://lauraCabrera20.somee.com/LockAi/Requerimento/"; //xyz --- enderco da minha API.
 
         private readonly ILogger<RequerimentoController> _logger;
 
