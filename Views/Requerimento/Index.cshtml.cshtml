@@ -1,0 +1,47 @@
+@model IEnumerable<LockAiMvc.Models.RequerimentoViewModel>
+
+@{
+    ViewBag.Title = "Requerimentos";
+}
+
+<h2>Lista de Requerimentos</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo Requerimento", "Create")
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Momento)</th>
+            <th>@Html.DisplayNameFor(model => model.TipoRequerimento)</th>
+            <th>@Html.DisplayNameFor(model => model.IdLocacao)</th>
+            <th>@Html.DisplayNameFor(model => model.Observacao)</th>
+            <th>@Html.DisplayNameFor(model => model.Situacao)</th>
+            <th>@Html.DisplayNameFor(model => model.DataAtualizacao)</th>
+            <th>@Html.DisplayNameFor(model => model.IdUsuarioAtualizacao)</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Momento)</td>
+                <td>@Html.DisplayFor(modelItem => item.TipoRequerimento)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdLocacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.Observacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.Situacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataAtualizacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdUsuarioAtualizacao)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

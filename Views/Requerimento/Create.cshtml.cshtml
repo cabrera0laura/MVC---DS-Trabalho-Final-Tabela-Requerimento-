@@ -1,0 +1,40 @@
+@model LockAiMvc.Models.RequerimentoViewModel
+
+@{
+    ViewBag.Title = "Criar Novo Requerimento";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Momento</label>
+        <input asp-for="Momento" class="form-control" />
+    </div>
+    <div>
+        <label>Tipo de Requerimento</label>
+        <input asp-for="TipoRequerimento" class="form-control" />
+    </div>
+    <div>
+        <label>ID da Locação</label>
+        <input asp-for="IdLocacao" class="form-control" />
+    </div>
+    <div>
+        <label>Observação</label>
+        <input asp-for="Observacao" class="form-control" />
+    </div>
+    <div>
+        <label>Situação</label>
+        <input asp-for="Situacao" class="form-control" />
+    </div>
+    <div>
+        <label>Data de Atualização</label>
+        <input asp-for="DataAtualizacao" class="form-control" />
+    </div>
+    <div>
+        <label>ID do Usuário de Atualização</label>
+        <input asp-for="IdUsuarioAtualizacao" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
