@@ -2,30 +2,17 @@
 
 Aplicação ASP.NET Core MVC para exibir os dados da API LockAi hospedada no Somee.
 
-## 👤 Estudante
+## Estudante
 
-Nome: Laura Cabrera  
-Curso: Análise e Desenvolvimento de Sistemas  
----
+**Nome:** Laura Cabrera  
+ 
+### Link da API
 
-## 🔗 Link da API
-
-[API - LockAi (Somee)](http://lauracabrera20.somee.com/LockAi/Requerimento/GetAll)
+http://lauracabrera20.somee.com/LockAi/Requerimento/GetAll
 
 ---
 
-## 🌐 Link da Aplicação MVC no Somee
+### Link da Aplicação MVC no Somee
 
-[Projeto MVC publicado no Somee](http://salaura.somee.com/Requerimento)
+http://salaura.somee.com/Requerimento
 
----
-
-## 🖼️ Tela de Exemplo
-
-![Tela de listagem](LockAiMvc/ListaReq.jpg)
-
-## 📂 Estrutura
-
-- **Controllers/** - Lógica para comunicação com a API e controle de fluxo
-- **Models/** - Classe `RequerimentoViewModel.cs` usada para transferir dados entre API e View
-- **Views/** - Página `Index.cshtml` usada para exibir os dados
