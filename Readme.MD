@@ -16,3 +16,4 @@ http://lauracabrera20.somee.com/LockAi/Requerimento/GetAll
 
 http://salaura.somee.com/Requerimento
 
+![Tela de listagem](Resposta/ListaReq.JPG)
