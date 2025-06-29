@@ -1,8 +1,6 @@
 @model IEnumerable<LockAiMvc.Models.RequerimentoViewModel>
 
-@{
-    ViewBag.Title = "Requerimentos";
-}
+@{ViewBag.Title = "Requerimento";}
 
 <h2>Lista de Requerimentos</h2>
 
@@ -10,8 +8,7 @@
     @Html.ActionLink("Criar Novo Requerimento", "Create")
 </p>
 
-<table class="table table-bordered table-striped">
-    <thead>
+<table class="table">
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id)</th>
             <th>@Html.DisplayNameFor(model => model.Momento)</th>
@@ -21,10 +18,10 @@
             <th>@Html.DisplayNameFor(model => model.Situacao)</th>
             <th>@Html.DisplayNameFor(model => model.DataAtualizacao)</th>
             <th>@Html.DisplayNameFor(model => model.IdUsuarioAtualizacao)</th>
-            <th>Ações</th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
+
+    
         @foreach (var item in Model)
         {
             <tr>
@@ -43,5 +40,4 @@
                 </td>
             </tr>
         }
-    </tbody>
 </table>

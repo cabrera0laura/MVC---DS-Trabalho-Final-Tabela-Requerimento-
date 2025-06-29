@@ -3,8 +3,32 @@
 @{
     ViewBag.Title = "Criar Novo Requerimento";
 }
+<!--
+Insira aqui os TempData de Sucesso e erro para evitar tela da morte-->
+<h2>Criar um navbarSupportedContent Requerimento</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Observacao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Observacao, new { EndAddHtmlAttributeValues = new { @class = "form-control" } })
+            </div>
 
-<h2>@ViewBag.Title</h2>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Salvar" class="btn btn-prima]"/>
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Retornar", "Index")
+</div>
+
 
 <form asp-action="Create" method="post">
     <div>

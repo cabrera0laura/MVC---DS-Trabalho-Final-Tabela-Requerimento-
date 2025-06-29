@@ -25,6 +25,11 @@ namespace LockAiMvc.Controllers
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
+        public IActionResult Index()
+        {
+            return View("cadastrarRequerimento");
+        }
+
         public IActionResult Error()
         {
             return View("Error!");
@@ -37,8 +42,8 @@ namespace LockAiMvc.Controllers
             {
                 string uriComplementar = "GetAll"; //1
                 HttpClient httpClient = new HttpClient(); //2
-                string token = HttpContext.Session.GetString("SessionTokenUsuario"); //3
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token); //4
+//                string token = HttpContext.Session.GetString("SessionTokenUsuario"); //3
+//                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token); //4
 
                 HttpResponseMessage response = await httpClient.GetAsync(uriBase + uriComplementar);
                 string serialized = await response.Content.ReadAsStringAsync();
@@ -59,14 +64,15 @@ namespace LockAiMvc.Controllers
             }
         }
 
-        [HttpPost]
+      /*  [HttpPost]
         public async Task<ActionResult> CreateAsync(RequerimentoViewModel r)
         {
             try
             {
                 HttpClient httpClient = new HttpClient();
-                /*string token = HttpContext.Session.GetString("SessionTokenUsuario");
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);*/
+                //****
+                string token = HttpContext.Session.GetString("SessionTokenUsuario");
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var content = new StringContent(JsonConvert.SerializeObject(r));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -94,6 +100,32 @@ namespace LockAiMvc.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<ActionResult> DetailsAsync(int? id)
+        {
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                string token = HttpContext.Session.GetString("SessionUsuario");
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                HttpResponseMessage response = await httpClient.GetAsync(uriBase + id.ToString());
+                string serialized = await response.Content.ReadAsStringAsync();
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    RequerimentoViewModel r = await Task.Run(() => JsonConvert.DeserializeObject<RequerimentoViewModel>(serialized));
+                    return View(r);
+                }
+                else
+                    throw new System.Exception(serialized);
+            }
+            catch (System.Exception ex)
+            {
+                TempData["MensagemErro"] = ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+*/
 
 
 

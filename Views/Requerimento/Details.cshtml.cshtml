@@ -1,0 +1,21 @@
+
+@model LockAiMvc.Models.RequerimentoViewModel
+@{
+    ViewBag.Title = "Detalhes do Requerimento";
+}
+
+<h2> Detalhes do Requerimento </h2>
+<div>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Situacao)</dt>
+        <dd>@Html.DisplayFor(model => model.Situacao)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id}) |
+    @Html.ActionLink("Retornar", "Index")
+</p>

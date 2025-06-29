@@ -7,7 +7,7 @@ namespace LockAiMvc.Models
 {
     public class RequerimentoViewModel
     {
-         public int Id { get; set; }
+        public int Id { get; set; }
         public string Momento { get; set; }
         public string TipoRequerimento { get; set; }
         public string IdLocacao { get; set; }
