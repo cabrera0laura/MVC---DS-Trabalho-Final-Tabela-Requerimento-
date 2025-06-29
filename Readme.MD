@@ -14,6 +14,8 @@ http://lauracabrera20.somee.com/LockAi/Requerimento/GetAll
 
 ### Link da Aplicação MVC no Somee
 
+**Exemplo Tela:**
+
 http://salaura.somee.com/Requerimento
 
 ![Tela de listagem](Resposta/ListaReq.JPG)
